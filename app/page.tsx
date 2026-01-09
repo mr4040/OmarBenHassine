@@ -42,7 +42,17 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative flex min-h-screen items-center justify-center pt-20">
         <motion.div variants={stagger} initial="hidden" animate="visible" className="z-10 max-w-4xl px-6 text-center">
-          <motion.img src="/logo.gif" alt="Red Team Logo" width={96} height={96} className="mx-auto mb-10" style={{ imageRendering: "pixelated" }} />
+            <motion.img
+              src="/logo.webp"          // ← Updated extension
+              alt="Red Team Logo"
+              width={96}
+              height={96}
+              className="mx-auto mb-10"
+              style={{ imageRendering: "pixelated" }}  // Keeps sharp pixels
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.6, ease: "easeOut" }}
+            />          
           <motion.p variants={reveal} className="mb-4 text-xs tracking-[0.45em] uppercase text-emerald-400">
             <TerminalSquare className="inline mr-2 h-4 w-4" /> adversarial systems operator
           </motion.p>
