@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #000000;
+  --text-primary: #f5f5f5;
+  --accent: #10b981;
+}
+
+.dark {
+  --bg-primary: #000000;
+  --text-primary: #f5f5f5;
+  --accent: #10b981;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Terminal Effects (from previous) */
+.glitch::before,
+.glitch::after { /* ... keep full glitch keyframes from previous message ... */ }
+
+/* Add all keyframes from Terminal component here */
+@keyframes glitch-1 { /* ... */ }
+@keyframes glitch-2 { /* ... */ }
+@keyframes scanline { /* ... */ }
+@keyframes scan-slow { /* ... */ }
+
+.terminal-scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to bottom, transparent, rgba(16,185,129,0.6), transparent);
+  animation: scanline 1.2s linear;
+  pointer-events: none;
+  z-index: 9999;
+}
